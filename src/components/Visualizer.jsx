@@ -10,10 +10,12 @@ export default function Visualizer() {
   const [darkMode, setDarkMode] = useState(true);
 
   const getBarCount = () => {
+    if (typeof window === "undefined") return 50; 
     if (window.innerWidth < 480) return 25;
     if (window.innerWidth < 768) return 35;
     return 50;
   };
+  
 
   const generateArray = useCallback(() => {
     const count = getBarCount();
@@ -24,8 +26,11 @@ export default function Visualizer() {
   }, []);
 
   useEffect(() => {
-    generateArray();
+    if (typeof window !== "undefined") {
+      generateArray();
+    }
   }, [generateArray]);
+  
 
   // ✅ Bubble Sort
   const bubbleSort = async () => {
