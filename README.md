@@ -50,7 +50,7 @@ npm run build
 npm run deploy
 🙋‍♀️ Author
 Harshita Bahl
-Connect on LinkedIn
+
 Explore more projects at GitHub
 
 ⭐️ Show your support
